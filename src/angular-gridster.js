@@ -1350,7 +1350,10 @@
 					item.setPosition(item.row, item.col);
 					item.setSizeY(item.sizeY);
 					item.setSizeX(item.sizeX);
-
+					itemOptions.newSizeX = item.sizeX;
+					itemOptions.newSizeY = item.sizeY;
+					itemOptions.newCol = item.col;
+					itemOptions.newRow = item.row;
 					scope.$apply(function() {
 						if (gridster.draggable && gridster.draggable.stop) {
 							gridster.draggable.stop(event, $el, itemOptions);
@@ -1624,7 +1627,10 @@
 						item.setPosition(item.row, item.col);
 						item.setSizeY(item.sizeY);
 						item.setSizeX(item.sizeX);
-
+						itemOptions.newSizeX = item.sizeX;
+						itemOptions.newSizeY = item.sizeY;
+						itemOptions.newCol = item.col;
+						itemOptions.newRow = item.row;
 						scope.$apply(function() {
 							if (gridster.resizable && gridster.resizable.stop) {
 								gridster.resizable.stop(e, $el, itemOptions); // options is the item model
