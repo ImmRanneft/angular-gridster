@@ -1492,6 +1492,12 @@
 					}
 					gridster.movingItem = null;
 					item.setPosition(item.row, item.col);
+					item.setSizeX(item.sizeX);
+					item.setSizeY(item.sizeY);
+          itemOptions.newSizeX = item.sizeX;
+          itemOptions.newSizeY = item.sizeY;
+          itemOptions.newCol = item.col;
+          itemOptions.newRow = item.row;
 
 					scope.$apply(function() {
 						if (gridster.draggable && gridster.draggable.stop) {
@@ -1795,6 +1801,11 @@
 					item.setPosition(item.row, item.col);
 					item.setSizeY(item.sizeY);
 					item.setSizeX(item.sizeX);
+
+          itemOptions.newSizeX = item.sizeX;
+          itemOptions.newSizeY = item.sizeY;
+          itemOptions.newCol = item.col;
+          itemOptions.newRow = item.row;
 
 					scope.$apply(function() {
 						if (gridster.resizable && gridster.resizable.stop) {
